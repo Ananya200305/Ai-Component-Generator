@@ -6,7 +6,7 @@ const app = express();
 
 // Log all requests
 app.use((req, res, next) => {
-  console.log(`📨 ${req.method} ${req.url}`);
+  console.log(`${req.method} ${req.url}`);
   next();
 });
 
@@ -36,7 +36,7 @@ app.post("/generate", async (req, res) => {
       return res.status(400).json({ error: "Prompt required" });
     }
 
-    console.log("🤖 Generating for:", prompt.substring(0, 50) + "...");
+    console.log("Generating for:", prompt.substring(0, 50) + "...");
 
     const finalPrompt = `
 You are an experienced programmer with expertise in web development and UI/UX design. You create modern, animated, and fully responsive UI components. You are highly skilled in HTML, CSS, Tailwind CSS, Bootstrap, JavaScript, React, Next.js, Vue.js, Angular, and more.

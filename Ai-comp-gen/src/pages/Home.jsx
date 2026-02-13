@@ -31,9 +31,7 @@ function Home() {
   const [newTab, setNewTab] = useState(false)
   const [refreshKey, setRefreshKey] = useState(0)
 
-  // const ai = new GoogleGenAI({
-  //   apiKey: "AIzaSyBhqK4M0305X3256yuYBGwGJfB5werqoRM",
-  // });
+
 
   const copyContent = async () => {
     if(!code.trim()) return toast.error("Nothing to copy")
@@ -103,7 +101,7 @@ async function getResponse() {
   try {
     setLoading(true);
 
-    const response = await fetch("http://localhost:5001/generate", {
+    const response = await fetch("https://ai-component-generator-1-uk6j.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
