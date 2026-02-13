@@ -63,11 +63,11 @@ And give the whole code in a single HTML file.
     const match = text.match(/```(?:\w+)?\n?([\s\S]*?)```/);
     const cleanCode = match ? match[1].trim() : text.trim();
 
-    console.log("✅ Content generated successfully");
+    console.log("Content generated successfully");
     res.json({ output: cleanCode });
 
   } catch (err) {
-    console.error("❌ Error:", err.message);
+    console.error("Error:", err.message);
     
     if (err.message.includes("API key")) {
       return res.status(403).json({ 
@@ -85,7 +85,7 @@ And give the whole code in a single HTML file.
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`\n🚀 Server running on port ${PORT}`);
-    console.log(`📡 API: http://localhost:${PORT}/generate`);
-    console.log(`✅ CORS enabled\n`);
+    console.log(`Server running on port ${PORT}`);
+    console.log(`API: http://localhost:${PORT}/generate`);
+    console.log(`CORS enabled\n`);
 });
