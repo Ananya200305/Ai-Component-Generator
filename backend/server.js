@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 const cors = require("cors");
 
 app.use(cors({
-  origin: "http://localhost:5173", // Vite default
+  origin: "*", // Vite default
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"]
 }));
